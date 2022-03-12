@@ -1,7 +1,8 @@
 let colorSelected; 
 
 //Adds a row
-function addR() {
+function addR() 
+{
     //alert("Clicked Add Row")
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
@@ -25,9 +26,15 @@ function addC() {
     console.log(cols.length); 
 }
 
-//Removes a row
-function removeR() {
+//Removes a row... probably thinking if the length != 0 then remove child -> removeChild()`
+function removeR() 
+{
     alert("Clicked Remove Row")
+    if (rows.length != 0)
+    {
+        row.removeChild(col);
+        grid.removeChild(row);
+    }
 }
 //Remove a column
 function removeC() {
@@ -50,4 +57,3 @@ function clearAll(){
 function fillU(){
     alert("Clicked Fill All Uncolored")
 }
-
