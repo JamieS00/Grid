@@ -21,9 +21,9 @@ function addR() {
 
     console.log("rows after length ==0: ",rows.length); // length = 1
 
-    // if # of rows.length > 0 then you figure out how many cells 
-    //are in that row (using childElementCount) & then create a new row w/ the same # of cells 
-
+    
+    //if rows.length > 0 then you want to figure out how many cells are in that row(using childElementCount)
+    // & then creat a new row w/ the same # of cells
     if(rows.length > 0)
     {
         let rows = document.getElementsByTagName("tr"); //tr
