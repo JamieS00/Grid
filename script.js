@@ -5,45 +5,51 @@ function addR() {
     //alert("Clicked Add Row")
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
-    console.log(rows.length);
+    console.log(rows.length); //Length = 0 
     
-    if (rows.length === 0) {
-
+    if (rows.length === 0) //empty grid
+    {
         let row = document.createElement("tr");
         let col = document.createElement("td");
         col.onclick = function (){
             this.style.backgroundColor = colorSelected;
-        };
+    }
+
         row.appendChild(col);
         grid.appendChild(row); //here is actually the cell being drawn
 
-    }
+        console.log("rows after length ==0: ",rows.length); // length = 1
+    } 
 
-    console.log("rows after length ==0: ",rows.length); // length = 1
-
-    
-    //if rows.length > 0 then you want to figure out how many cells are in that row(using childElementCount)
-    // & then creat a new row w/ the same # of cells
-    if(rows.length > 0)
+    /*rows.length > 0 figure out how many cols are in that row(using childElementCount)
+    & then create a new row w/ the same # of cols */
+    else //atleast one row in the grid...since we have one row in our grid we can get num of cols
     {
-        let rows = document.getElementsByTagName("tr"); //tr
-        let numCols = rows[0].childElementCount; // figuring out # of cells in a row 
+        let rows = document.getElementsByTagName("tr"); 
+        let numCols = rows[0].childElementCount; // # of cols in a row 
         console.log(numCols); // There is 1 cell in a row
 
-        //creating a new row w/ the same # of cells 
-        let row = document.createElement("tr"); 
-        let col = document.createElement("td");
-        col.onclick = function ()
-        {
-            this.style.backgroundColor = colorSelected;
-        };
+        //creating a new row  
+        let row = document.createElement("tr");
+        
+        for (let i = 0; i < numCols; i++) 
+        { 
+            let col = document.createElement("td");
+            col.onclick = function ()
+            {
+             this.style.backgroundColor = colorSelected;
+            };
+            row.appendChild(col);
+        } //end of for loop
 
-        row.appendChild(col);
         grid.appendChild(row);
 
-        console.log("rows length > 0:",rows.length); // length=2;
+        //console.log("rows length > 0:",rows.length); // length=2;
     }
+
 }
+
+
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
