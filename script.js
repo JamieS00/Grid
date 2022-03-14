@@ -30,6 +30,7 @@ function addR()
     {
         let rows = document.getElementsByTagName("tr"); //tr
         let numCols = rows[0].childElementCount; // figuring out # of cells in a row 
+        let col_Len = rows.item(rows.length - 1).cells.length;
         console.log(numCols); // There is 1 cell in a row
 
         //creating a new row w/ the same # of cells 
@@ -40,7 +41,12 @@ function addR()
             this.style.backgroundColor = colorSelected;
         };
 
-        row.appendChild(col);
+        for(let i = 0 ; col_Len > i; i++)
+        {
+            console.log(i);
+            row.appendChild(col); //adding col
+            col = document.createElement("td");
+        }
         grid.appendChild(row);
 
         console.log("rows length > 0:",rows.length); // length=2;
