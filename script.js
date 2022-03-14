@@ -22,15 +22,15 @@ function addR()
 
     }
 
-    console.log("rows after length ==0: ",rows.length); // length = 1
+    //console.log("rows after length ==0: ",rows.length); // length = 1
 
     // if # of rows.length > 0 then you figure out how many cells 
     //are in that row (using childElementCount) & then create a new row w/ the same # of cells 
-
-    if(rows.length > 0)
+    else
     {
         let rows = document.getElementsByTagName("tr"); //tr
         let numCols = rows[0].childElementCount; // figuring out # of cells in a row 
+        let col_Len = rows.item(rows.length - 1).cells.length;
         console.log(numCols); // There is 1 cell in a row
 
         //creating a new row w/ the same # of cells 
@@ -41,7 +41,12 @@ function addR()
             this.style.backgroundColor = colorSelected;
         };
 
-        row.appendChild(col);
+        for(let i = 0 ; col_Len > i; i++)
+        {
+            console.log(i);
+            row.appendChild(col); //adding col
+            col = document.createElement("td");
+        }
         grid.appendChild(row);
 
         console.log("rows length > 0:",rows.length); // length=2;
