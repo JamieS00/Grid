@@ -77,8 +77,8 @@ function removeR()
     //alert("Clicked Remove Row")
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
-    // if(rows.length > 0){
-    //     grid.deleteRow(rows-1);
+    if(rows.length > 0){
+        grid.deleteRow(rows-1);
     }
 }
 //Remove a column
