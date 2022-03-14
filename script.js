@@ -54,18 +54,21 @@ function addR()
 }
 
 
-
-
-
-
-
-
 //Adds a column
 function addC() 
 {
     //alert("Clicked Add Col")
-    let cols = document.getElementsByTagName("td");
-    console.log(cols.length); 
+    let grid = document.getElementById("grid");
+    let col = document.createElement("td");
+
+    for (let row of grid.rows){
+        col.onclick = function ()
+        {
+            this.style.backgroundColor = colorSelected;
+        };
+        row.appendChild(col);
+        col = document.createElement("td");
+    }
 }
 
 //Removes a row
