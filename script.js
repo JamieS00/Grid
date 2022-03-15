@@ -85,26 +85,32 @@ function removeR()
 function removeC() 
 {
     alert("Clicked Remove Col")
-}
-//sets global var for selected color
-function selected()
-{
-    colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
-}
-
-function fill()
-{
-    alert("Clicked Fill All")
+    let grid = document.getElementById("grid");
+    let col = document.getElementsByTagName("td");
+    if(col.length > 0){
+        grid.deletecol(col-1);
+    }
 }
 
-function clearAll()
-{
-    alert("Clicked Clear All")
-}
 
-function fillU()
-{
-    alert("Clicked Fill All Uncolored")
-}
+// //sets global var for selected color
+// function selected()
+// {
+//     colorSelected = document.getElementById("selectedID").value;
+//     console.log(colorSelected);
+// }
 
+// function fill()
+// {
+//     alert("Clicked Fill All")
+// }
+
+// function clearAll()
+// {
+//     alert("Clicked Clear All")
+// }
+
+// function fillU()
+// {
+//     alert("Clicked Fill All Uncolored")
+// }
