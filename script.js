@@ -74,32 +74,46 @@ function addC()
 //Removes a row
 function removeR() 
 {
-    alert("Clicked Remove Row")
+    //alert("Clicked Remove Row")
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    if(rows.length > 0){
+        grid.deleteRow(rows-1);
+    }
 }
 //Remove a column
 function removeC() 
 {
     alert("Clicked Remove Col")
-}
-//sets global var for selected color
-function selected()
-{
-    colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
+    let grid = document.getElementById("grid");
+    let cols = document.getElementsByTagName("td");
+    if(col.length > 0){
+        grid.deletecol(col-1);
+    }
+
+    let cols = document.getElementsByTagName("td");
+    console.log(cols.length); 
 }
 
-function fill()
-{
-    alert("Clicked Fill All")
-}
 
-function clearAll()
-{
-    alert("Clicked Clear All")
-}
+// //sets global var for selected color
+// function selected()
+// {
+//     colorSelected = document.getElementById("selectedID").value;
+//     console.log(colorSelected);
+// }
 
-function fillU()
-{
-    alert("Clicked Fill All Uncolored")
-}
+// function fill()
+// {
+//     alert("Clicked Fill All")
+// }
 
+// function clearAll()
+// {
+//     alert("Clicked Clear All")
+// }
+
+// function fillU()
+// {
+//     alert("Clicked Fill All Uncolored")
+// }
