@@ -93,17 +93,23 @@ function removeC()
 }
 
 
-// //sets global var for selected color
-// function selected()
-// {
-//     colorSelected = document.getElementById("selectedID").value;
-//     console.log(colorSelected);
-// }
+//sets global var for selected color
+function selected()
+{
+    colorSelected = document.getElementById("selectedID").value;
+    console.log(colorSelected);
+}
 
-// function fill()
-// {
-//     alert("Clicked Fill All")
-// }
+function fill()
+{
+    // alert("Clicked Fill All")
+    let cells = document.getElementsByTagName("td");
+
+    //looping through all cells and then change based on selected color 
+    for (let i = 0; cells.length > i; i++){
+        cells.item(i).style.backgroundColor = colorSelected;
+    }
+}
 
 // function clearAll()
 // {
