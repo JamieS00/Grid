@@ -88,10 +88,7 @@ function removeC()
      console.log(colorSelected);
  }
 
- // function fill()
- // {
- //     alert("Clicked Fill All")
- // }
+
  function fill()
  {
      // alert("Clicked Fill All")
@@ -103,11 +100,29 @@ function removeC()
      }
  }
 
- // function clearAll()
- // {
-//     alert("Clicked Clear All")
-// }
-// function fillU()
-// {
-//     alert("Clicked Fill All Uncolored")
-// }
+ function clearAll()
+{
+    //alert("Clicked Clear All")
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    let len = rows.length;
+
+    for (let i = 1; len >= i; i++){
+        console.log(rows);
+        grid.deleteRow(len-i);
+        console.log(i);
+    }
+
+}
+function fillU()
+{
+    //alert("Clicked Fill All Uncolored")
+    
+    let cells = document.getElementsByTagName("td");
+
+    for (let i = 0; cells.length > i; i++){
+        if(cells.item(i).style.backgroundColor.length == 0){
+            cells.item(i).style.backgroundColor = colorSelected;
+        }
+    }
+}
